@@ -1,0 +1,172 @@
+nvidia@tegra-ubuntu:~$ history
+    1  [ -d .ssh ] || mkdir .ssh
+    2  mv /home/nvidia/tmp.pub /home/nvidia/.ssh/authorized_keys
+    3  exit
+    4  passwd
+    5  ls
+    6  mkdir git
+    7  cd git/
+    8  git initial
+    9  git init
+   10  ls
+   11  git clone https://github.com/jetsonhacks/buildOpenCVTX2.git
+   12  git clone https://github.com/PacktPublishing/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA.git
+   13  git clone https://github.com/opencv/opencv_contrib.git
+   14  ls
+   15  cd buildOpenCVTX2/
+   16  ls
+   17  diff buildOpenCV.sh buildAndPackageOpenCV.sh
+   18  ls
+   19  cd ..
+   20  cd git/buildOpenCVTX2/
+   21  ls
+   22  cat buildOpenCV.sh
+   23  vi buildOpenCV.sh
+   24  cd ~/git/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA/
+   25  ls
+   26  cd Chapter7/
+   27  ls
+   28  g++ -std=c++11 07_surf_final.cpp `pkg_config --libs --cflags opencv` -o surf_final
+   29  clear
+   30  history
+   31  cls
+   32  clear
+   33  nvidia-smi
+   34  cd
+   35  ls
+   36  cd /
+   37  ls
+   38  cd ~/VisionWorks-SFM-0.90-Samples/
+   39  ls
+   40  cd bin/aarch64/linux/release/
+   41  ls
+   42  ./nvx_sample_sfm
+   43  cd
+   44  ls
+   45  pwd
+   46  ls
+   47  ./tegrastats
+   48  cd git
+   49  ls
+   50  git clone https://github.com/opencv/opencv.git
+   51  ls
+   52  cd ..
+   53  clear
+   54  ls
+   55  cd Downloads/
+   56  ls
+   57  unzip opencv-3.4.3.zip
+   58  ls
+   59  unzip opencv_contrib-3.4.3.zip
+   60  ls
+   61  cd opencv-3.4.3/
+   62  ls
+   63  mkdir build
+   64  cat CMakeLists.txt
+   65  clear
+   66  cd build/
+   67  sudo apt-add-repository universe
+   68  sudo apt-get update
+   69  sudo apt-get install -y     cmake     libavcodec-dev     libavformat-dev     libavutil-dev     libeigen3-dev     libglew-dev     libgtk2.0-dev     libgtk-3-dev     libjasper-dev     libjpeg-dev     libpng12-dev     libpostproc-dev     libswscale-dev     libtbb-dev     libtiff5-dev     libv4l-dev     libxvidcore-dev     libx264-dev     qt5-default     zlib1g-dev     pkg-config
+   70  sudo vi /usr/local/cuda/include/cuda_gl_interop.h
+   71  sudo mv /usr/local/cuda/include/cuda_gl_interop.h{,.orig}
+   72  sudo patch -N /usr/local/cuda/include/cuda_gl_interop.h.orig ~/git/buildOpenCVTX2/patches/OpenGLHeader.patch
+   73  sudo mv /usr/local/cuda/include/cuda_gl_interop.h{.orig,}
+   74  vi /usr/local/cuda/include/cuda_gl_interop.h
+   75  cd /usr/lib/aarch64-linux-gnu/
+   76  sudo ln -sf tegra/libGL.so libGL.so
+   77  ls -salt
+   78  sudo apt-get install -y python-dev python-numpy python-py python-pytest
+   79  sudo apt-get install -y python3-dev python3-numpy python3-py python3-pytest
+   80  sudo apt-get install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+   81  cd ~/git
+   82  ls
+   83  cd ..
+   84  clear
+   85  ls
+   86  cd Downloads/
+   87  ls
+   88  cd opencv-3.4.3/
+   89  ls
+   90  cd buid
+   91  cd build/
+   92  cat ~/Desktop/cmake.command
+   93  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-3.4.3/modules     -D WITH_CUDA=ON     -D CUDA_ARCH_BIN="6.2"     -D CUDA_ARCH_PTX=""     -D ENABLE_FAST_MATH=ON     -D CUDA_FAST_MATH=ON     -D ENABLE_NEON=ON     -D WITH_CUBLAS=ON     -D WITH_GSTREAMER=ON     -D WITH_GSTREAMER_0_10=OFF     -D WITH_LIBV4L=ON     -D BUILD_TESTS=OFF     -D BUILD_PERF_TESTS=OFF     -D BUILD_EXAMPLES=OFF     -D WITH_QT=ON     -D WITH_OPENGL=ON ..
+   94  make -j4
+   95  sudo make install
+   96  history
+   97  exit
+   98  cd Downloads/
+   99  ls
+  100  cd opencv_contrib-3.4.3/
+  101  ls
+  102  cd modules/
+  103  ls
+  104  find . -name *cudafeatures2d*
+  105  cd ..
+  106  cd opencv-3.4.3/
+  107  ls
+  108  find . -name *cudafeatures2d*
+  109  cd ../opencv_contrib-3.4.3/
+  110  find . -name *cudafeatures2d*
+  111  cd /usr/local/lib
+  112  ls
+  113  echo $PATH
+  114  cd ~/git/
+  115  ls
+  116  cd buildOpenCVTX2/
+  117  ls
+  118  vi buildOpenCV.sh
+  119  ls /etc/ld.so.conf.d/opencv.conf
+  120  sudo vi /etc/ld.so.conf.d/opencv.conf
+  121  sudo ldconfig -v
+  122  sudo vi /etc/ld.so.conf.d/opencv.conf
+  123  sudo ldconfig -v
+  124  sudo vi /etc/ld.so.conf.d/opencv.conf
+  125  ls /usr/local/lib
+  126  sudo ldconfig -v
+  127  sudo reboot
+  128  cd git/buildOpenCVTX2/
+  129  ls
+  130  cd patches/
+  131  ls
+  132  less OpenGLHeader.patch
+  133  cd ~/git/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA/Chapter7/
+  134  history
+  135  c
+  136  g++ -std=c++11 07_surf_final.cpp `pkg-config --libs --cflags opencv` -o surf_final
+  137  ./surf_final
+  138  ls
+  139  vi 07_surf_final.cpp
+  140  ./surf_final
+  141  g++ -std=c++11 07_surf_final.cpp `pkg-config --libs --cflags opencv` -o surf_final
+  142  ./surf_final
+  143  cd Desktop/
+  144  vi cmake.command
+  145  cd git/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA/Chapter7/
+  146  ls
+  147  ./surf_final
+  148  exit
+  149  cd git/Hands-On-GPU-Accelerated-Computer-Vision-with-OpenCV-and-CUDA/Chapter7
+  150  history
+  151  ./surf_final
+  152  cd ~/Downloads/
+  153  ls
+  154  cd opencv-3.4.3/
+  155  cd build/
+  156  history
+  157  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-3.4.3/modules     -D WITH_CUDA=ON     -D CUDA_ARCH_BIN="6.2"     -D CUDA_ARCH_PTX=""     -D ENABLE_FAST_MATH=ON     -D CUDA_FAST_MATH=ON     -D ENABLE_NEON=ON     -D WITH_CUBLAS=ON     -D WITH_GSTREAMER=ON     -D WITH_GSTREAMER_0_10=OFF     -D WITH_LIBV4L=ON     -D BUILD_TESTS=OFF     -D BUILD_PERF_TESTS=OFF     -D BUILD_EXAMPLES=OFF     -D WITH_QT=ON     -D OPENCV_ENABLE_NONFREE  -D WITH_OPENGL=ON ..
+  158  cmake -D CMAKE_BUILD_TYPE=RELEASE     -D CMAKE_INSTALL_PREFIX=/usr/local     -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-3.4.3/modules     -D WITH_CUDA=ON     -D CUDA_ARCH_BIN="6.2"     -D CUDA_ARCH_PTX=""     -D ENABLE_FAST_MATH=ON     -D CUDA_FAST_MATH=ON     -D ENABLE_NEON=ON     -D WITH_CUBLAS=ON     -D WITH_GSTREAMER=ON     -D WITH_GSTREAMER_0_10=OFF     -D WITH_LIBV4L=ON     -D BUILD_TESTS=OFF     -D BUILD_PERF_TESTS=OFF     -D BUILD_EXAMPLES=OFF     -D WITH_QT=ON     -D OPENCV_ENABLE_NONFREE=ON  -D WITH_OPENGL=ON ..
+  159  make -j4
+  160  sudo make install
+  161  cd
+  162  cd /media
+  163  ls
+  164  cd nvidia/
+  165  ls
+  166  sudo reboot
+  167  du -d1 -h /media/nvidia/
+  168  sudo du -d1 -h /media/nvidia/
+  169  sudo cp -ax / '/media/nvidia/SD Root'
+  170  history
+nvidia@tegra-ubuntu:~$
